@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: stg_nfl__passing_stats
+    description: '{{ doc("stg_nfl__passing_stats") }}'
+    columns:
+      - name: season_year
+        description: Season of record.
+        tests:
+            - not_null
+      
+      - name: player_name
+        description: Name of player.
+        meta:
+          contains_pii: true   
+        tags: ['contains_pii'] 
+        tests:
+            - not_null
+            - dbt_expectations.expect_column_to_exist
+
+      - name: team
+        description: The team the player was on that year.
+        tests:
+            - not_null       
+
+      - name: age
+        description: Age of player at season end.
+        tests:
+            - not_null
+
+      - name: position
+        description: Default player position.
+
+      - name: completions
+        description: Number of passing completions.
+
+      - name: attempts
+        description: Number of passing attempts.
+
+      - name: yards
+        description: Number of passing yards.
+
+      - name: td
+        description: Number of passing touchdowns.
