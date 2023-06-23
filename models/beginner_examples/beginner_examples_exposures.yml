@@ -1,0 +1,25 @@
+version: 2
+
+exposures:
+  - name: passing_stats_dashboard
+    description: |
+      A dashboard that plots passing attempts vs. completion % as an approximate measure for efficiency.
+    
+    # type could be {dashboard, notebook, analysis, ml, application}
+    type: dashboard 
+    
+    # this is just a link to the thing itself for click through from documentation
+    url: https://public.tableau.com/app/profile/ramiz.bozai/viz/Attemptsvs_Completion2021-DAIS/Dashboard1#1
+    
+    # convenience feature - relative scale of {high, medium, low}
+    maturity: high
+    
+    # documentation purposes for point of contact if stuff breaks
+    owner:
+      name: Patrick Mahomes
+      email: halloffamer@nfl.com
+    
+    # IMPORTANT: determines the lineage relationship of the exposure construct to the rest of your DAG
+    depends_on:
+      - ref('my_first_model')
+      - source('nfl', 'passing_stats')
