@@ -5,7 +5,7 @@ import numpy as np
 def model(dbt, session):
     dbt.config(
         submission_method='all_purpose_cluster',
-        create_notebook=True,
+        create_notebook=False,
         cluster_id='0426-154059-dox4kjfg',
         materialized = "table"
         )
