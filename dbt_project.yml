@@ -32,6 +32,10 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
+  +persist_docs:
+    relation: true
+    columns: true
+    
   ramiz_databricks_dais:
     beginner_examples:
       +materialized: table
