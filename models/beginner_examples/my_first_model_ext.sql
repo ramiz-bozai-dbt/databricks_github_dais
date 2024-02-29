@@ -1,4 +1,9 @@
-
+{{
+    config(
+        materialized='table',
+        location_root='s3://sales-sandbox-databricks-unity-catalog/s3data/'
+    )
+}}
 
 --This is my very first model.
 
@@ -8,7 +13,6 @@ select
     completions / attempts as completion_pct,
     1 as test,
     2 as test_col,
-    3 as yet_another_col,
     case
         when age between 20 and 23 then '20-23'
         when age between 24 and 28 then '24-28'

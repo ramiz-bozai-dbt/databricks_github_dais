@@ -1,7 +1,3 @@
-
-
---This is my very first model.
-
 select
     *,
     --Let's calculate the completion rate.
@@ -17,4 +13,4 @@ select
     end
         as age_bucket
 
-from {{ ref('stg_nfl__passing_stats') }}
+from `ramiz_bozai_sandbox_dev`.`dbt_rbozai`.`stg_nfl__passing_stats`
