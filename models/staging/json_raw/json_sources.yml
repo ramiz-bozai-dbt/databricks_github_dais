@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: json_raw
+    description: Sample json data from Randy
+    database: nfl_data
+    schema: raw
+
+    tables:
+      - name: json_example
